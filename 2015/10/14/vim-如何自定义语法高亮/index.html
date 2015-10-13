@@ -11,8 +11,9 @@ tags:  Vim用vim写python 发现有一些词没用语法高亮写起来十分不
 自己用的molokai配色
 首先找到vim的安装路径,而非修改当前用户下.vimrc
 在vim中
-‘’’:echo $VIMRUNTIME‘’’
-比如我安装目录是‘’’/usr/local/share/vim/vim74">
+1:echo $VIMRUNTIME
+比如我安装目录是1/usr/local/share/vim/vim74
+进入vim目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="李嘉航Blog">
 <meta property="og:url" content="http://yoursite.com/2015/10/14/vim-如何自定义语法高亮/index.html">
@@ -23,9 +24,10 @@ tags:  Vim用vim写python 发现有一些词没用语法高亮写起来十分不
 自己用的molokai配色
 首先找到vim的安装路径,而非修改当前用户下.vimrc
 在vim中
-‘’’:echo $VIMRUNTIME‘’’
-比如我安装目录是‘’’/usr/local/share/vim/vim74">
-<meta property="og:updated_time" content="2015-10-13T16:36:29.000Z">
+1:echo $VIMRUNTIME
+比如我安装目录是1/usr/local/share/vim/vim74
+进入vim目">
+<meta property="og:updated_time" content="2015-10-13T16:47:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李嘉航Blog">
 <meta name="twitter:description" content="title: vim 如何自定义语法高亮
@@ -34,8 +36,9 @@ tags:  Vim用vim写python 发现有一些词没用语法高亮写起来十分不
 自己用的molokai配色
 首先找到vim的安装路径,而非修改当前用户下.vimrc
 在vim中
-‘’’:echo $VIMRUNTIME‘’’
-比如我安装目录是‘’’/usr/local/share/vim/vim74">
+1:echo $VIMRUNTIME
+比如我安装目录是1/usr/local/share/vim/vim74
+进入vim目">
   
     <link rel="alternative" href="/atom.xml" title="李嘉航Blog" type="application/atom+xml">
   
@@ -84,7 +87,7 @@ tags:  Vim用vim写python 发现有一些词没用语法高亮写起来十分不
         <section id="main"><article id="post-vim-如何自定义语法高亮" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/14/vim-如何自定义语法高亮/" class="article-date">
-  <time datetime="2015-10-13T16:36:29.000Z" itemprop="datePublished">2015-10-14</time>
+  <time datetime="2015-10-13T16:47:26.000Z" itemprop="datePublished">2015-10-14</time>
 </a>
     
   </div>
@@ -99,13 +102,18 @@ tags:  Vim用vim写python 发现有一些词没用语法高亮写起来十分不
 <p>自己用的molokai配色</p>
 <p>首先找到vim的安装路径,而非修改当前用户下.vimrc</p>
 <p>在vim中</p>
-<p>‘’’<br>:echo $VIMRUNTIME<br>‘’’</p>
-<p>比如我安装目录是<br>‘’’<br>/usr/local/share/vim/vim74<br>‘’’<br>进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮<br>则是编辑<br>‘’’<br>./syntax/python.vim<br>‘’’<br>例如我想要对logging 加语法高亮<br>‘’’<br>syn keyword MyConditional       logging<br>‘’’<br>格式为 syn keyword 新语法名 高亮词1 高亮词2 //高亮词通过空格间隔<br>这里为logging加入新的条件后<br>编辑配色文件 例如博主使用的molokai配色 则直接修改molokai.vim<br>该文件通常位于<br>‘’’<br>~/.vim/colors/molokai.vim<br>‘’’<br>molokai在终端中有多种模式注意以下molokai.vim文件中的语句<br>‘’’<br>if &amp;t_Co &gt; 255 //如果终端支持256色 并且在vimrc 中开启了概模式<br>if exists(“g:rehash256”) &amp;&amp; g:rehash256 == 1<br>‘’’<br>则需要在相应的位置加入对新语法条件的配色方案<br>‘’’<br>hi MyConditional   ctermfg=24 // 这样就能为logging 加入语法高亮为蓝色<br>‘’’</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo $VIMRUNTIME</span><br></pre></td></tr></table></figure>
+<p>比如我安装目录是<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/share/</span>vim<span class="regexp">/vim74</span></span><br></pre></td></tr></table></figure></p>
+<p>进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮<br>则是编辑<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="keyword">syntax</span>/<span class="keyword">python</span>.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
+<p>例如我想要对logging 加语法高亮<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syn <span class="built_in">keyword</span> MyConditional       logging</span><br></pre></td></tr></table></figure></p>
+<p>格式为 syn keyword 新语法名 高亮词1 高亮词2 //高亮词通过空格间隔<br>这里为logging加入新的条件后<br>编辑配色文件 例如博主使用的molokai配色 则直接修改molokai.vim<br>该文件通常位于<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.<span class="keyword">vim</span>/colors/molokai.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
+<p>molokai在终端中有多种模式注意以下molokai.vim文件中的语句<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &amp;t_Co &gt; <span class="number">255</span> <span class="comment">//如果终端支持256色 并且在vimrc 中开启了概模式</span></span><br><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">exists</span><span class="params">(<span class="string">"g:rehash256"</span>)</span></span> &amp;&amp; g:rehash256 == <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>则需要在相应的位置加入对新语法条件的配色方案<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi MyConditional   ctermfg=<span class="number">24</span> <span class="comment">// 这样就能为logging 加入语法高亮为蓝色</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/14/vim-如何自定义语法高亮/" data-id="cifpldhmy0001nfdaln04iehe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/14/vim-如何自定义语法高亮/" data-id="cifpli8gh0001o9dap9pbsse3" class="article-share-link">Share</a>
       
       
     </footer>
