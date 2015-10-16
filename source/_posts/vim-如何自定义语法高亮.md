@@ -3,7 +3,7 @@ title: vim 如何自定义语法高亮
 date: 2015-10-13 23:52:37
 
 ## tags:  Vim
-
+---
 用vim写python 发现有一些词没用语法高亮写起来十分不便.
 
 自己用的molokai配色
