@@ -37,34 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="用vim写python 发现有一些词没用语法高亮写起来十分不便.
-自己用的molokai配色
-首先找到vim的安装路径,而非修改当前用户下.vimrc
-在vim中
-1:echo $VIMRUNTIME
-比如我安装目录是1/usr/local/share/vim/vim74
-进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮则是编辑1.">
+<meta name="description" content="&amp;#x7528;vim&amp;#x5199;python &amp;#x53D1;&amp;#x73B0;&amp;#x6709;&amp;#x4E00;&amp;#x4E9B;&amp;#x8BCD;&amp;#x6CA1;&amp;#x7528;&amp;#x8BED;&amp;#x6CD5;&amp;#x9AD8;&amp;#x4EAE;&amp;#x5199;&amp;#x8D77;&amp;#x6765;&amp;#x5341;&amp;#x5206;&amp;#x4E0D;&amp;#x4FBF;.
+&amp;#x81EA;&amp;#x5DF1;&amp;#x7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim 如何自定义语法高亮">
 <meta property="og:url" content="http://yoursite.com/2015/10/13/vim-如何自定义语法高亮/index.html">
 <meta property="og:site_name" content="李嘉航Blog">
-<meta property="og:description" content="用vim写python 发现有一些词没用语法高亮写起来十分不便.
-自己用的molokai配色
-首先找到vim的安装路径,而非修改当前用户下.vimrc
-在vim中
-1:echo $VIMRUNTIME
-比如我安装目录是1/usr/local/share/vim/vim74
-进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮则是编辑1.">
-<meta property="og:updated_time" content="2015-10-16T16:18:08.000Z">
+<meta property="og:description" content="&amp;#x7528;vim&amp;#x5199;python &amp;#x53D1;&amp;#x73B0;&amp;#x6709;&amp;#x4E00;&amp;#x4E9B;&amp;#x8BCD;&amp;#x6CA1;&amp;#x7528;&amp;#x8BED;&amp;#x6CD5;&amp;#x9AD8;&amp;#x4EAE;&amp;#x5199;&amp;#x8D77;&amp;#x6765;&amp;#x5341;&amp;#x5206;&amp;#x4E0D;&amp;#x4FBF;.
+&amp;#x81EA;&amp;#x5DF1;&amp;#x7">
+<meta property="og:updated_time" content="2015-10-20T03:56:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim 如何自定义语法高亮">
-<meta name="twitter:description" content="用vim写python 发现有一些词没用语法高亮写起来十分不便.
-自己用的molokai配色
-首先找到vim的安装路径,而非修改当前用户下.vimrc
-在vim中
-1:echo $VIMRUNTIME
-比如我安装目录是1/usr/local/share/vim/vim74
-进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮则是编辑1.">
+<meta name="twitter:description" content="&amp;#x7528;vim&amp;#x5199;python &amp;#x53D1;&amp;#x73B0;&amp;#x6709;&amp;#x4E00;&amp;#x4E9B;&amp;#x8BCD;&amp;#x6CA1;&amp;#x7528;&amp;#x8BED;&amp;#x6CD5;&amp;#x9AD8;&amp;#x4EAE;&amp;#x5199;&amp;#x8D77;&amp;#x6765;&amp;#x5341;&amp;#x5206;&amp;#x4E0D;&amp;#x4FBF;.
+&amp;#x81EA;&amp;#x5DF1;&amp;#x7">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -214,18 +199,18 @@
       
 
       
-        <span itemprop="articleBody"><p>用vim写python 发现有一些词没用语法高亮写起来十分不便.</p>
-<p>自己用的molokai配色</p>
-<p>首先找到vim的安装路径,而非修改当前用户下.vimrc</p>
-<p>在vim中</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo $VIMRUNTIME</span><br></pre></td></tr></table></figure>
-<p>比如我安装目录是<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/share/</span>vim<span class="regexp">/vim74</span></span><br></pre></td></tr></table></figure></p>
-<p>进入vim目录之后进入./syntax文件, 然后进入你需要修改的相关语法,例如我需要增加python 的语法高亮<br>则是编辑<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="keyword">syntax</span>/<span class="keyword">python</span>.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
-<p>例如我想要对logging 加语法高亮<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syn <span class="built_in">keyword</span> MyConditional       logging</span><br></pre></td></tr></table></figure></p>
-<p>格式为 syn keyword 新语法名 高亮词1 高亮词2 //高亮词通过空格间隔<br>这里为logging加入新的条件后<br>编辑配色文件 例如博主使用的molokai配色 则直接修改molokai.vim<br>该文件通常位于<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.<span class="keyword">vim</span>/colors/molokai.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>&#x7528;vim&#x5199;python &#x53D1;&#x73B0;&#x6709;&#x4E00;&#x4E9B;&#x8BCD;&#x6CA1;&#x7528;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x5199;&#x8D77;&#x6765;&#x5341;&#x5206;&#x4E0D;&#x4FBF;.</p>
+<p>&#x81EA;&#x5DF1;&#x7528;&#x7684;molokai&#x914D;&#x8272;</p>
+<p>&#x9996;&#x5148;&#x627E;&#x5230;vim&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;,&#x800C;&#x975E;&#x4FEE;&#x6539;&#x5F53;&#x524D;&#x7528;&#x6237;&#x4E0B;.vimrc</p>
+<p>&#x5728;vim&#x4E2D;<br><!-- 修改.vimrc --><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo $VIMRUNTIME</span><br></pre></td></tr></table></figure></p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x662F;<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/share/</span>vim<span class="regexp">/vim74</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x8FDB;&#x5165;vim&#x76EE;&#x5F55;&#x4E4B;&#x540E;&#x8FDB;&#x5165;./syntax&#x6587;&#x4EF6;, &#x7136;&#x540E;&#x8FDB;&#x5165;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x76F8;&#x5173;&#x8BED;&#x6CD5;,&#x4F8B;&#x5982;&#x6211;&#x9700;&#x8981;&#x589E;&#x52A0;python &#x7684;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;<br>&#x5219;&#x662F;&#x7F16;&#x8F91;<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="keyword">syntax</span>/<span class="keyword">python</span>.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x4F8B;&#x5982;&#x6211;&#x60F3;&#x8981;&#x5BF9;logging &#x52A0;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syn <span class="built_in">keyword</span> MyConditional       logging</span><br></pre></td></tr></table></figure></p>
+<p>&#x683C;&#x5F0F;&#x4E3A; syn keyword &#x65B0;&#x8BED;&#x6CD5;&#x540D; &#x9AD8;&#x4EAE;&#x8BCD;1 &#x9AD8;&#x4EAE;&#x8BCD;2 //&#x9AD8;&#x4EAE;&#x8BCD;&#x901A;&#x8FC7;&#x7A7A;&#x683C;&#x95F4;&#x9694;<br>&#x8FD9;&#x91CC;&#x4E3A;logging&#x52A0;&#x5165;&#x65B0;&#x7684;&#x6761;&#x4EF6;&#x540E;<br>&#x7F16;&#x8F91;&#x914D;&#x8272;&#x6587;&#x4EF6; &#x4F8B;&#x5982;&#x535A;&#x4E3B;&#x4F7F;&#x7528;&#x7684;molokai&#x914D;&#x8272; &#x5219;&#x76F4;&#x63A5;&#x4FEE;&#x6539;molokai.vim<br>&#x8BE5;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x4F4D;&#x4E8E;<br><!-- 修改molokai配色方案>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.<span class="keyword">vim</span>/colors/molokai.<span class="keyword">vim</span></span><br></pre></td></tr></table></figure></p>
 <p>molokai在终端中有多种模式注意以下molokai.vim文件中的语句<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &amp;t_Co &gt; <span class="number">255</span> <span class="comment">//如果终端支持256色 并且在vimrc 中开启了概模式</span></span><br><span class="line"><span class="keyword">if</span> <span class="function"><span class="title">exists</span><span class="params">(<span class="string">"g:rehash256"</span>)</span></span> &amp;&amp; g:rehash256 == <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <p>则需要在相应的位置加入对新语法条件的配色方案<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi MyConditional   ctermfg=<span class="number">24</span> <span class="comment">// 这样就能为logging 加入语法高亮为蓝色</span></span><br></pre></td></tr></table></figure></p>
-</span>
+--></p></span>
       
     </div>
 
