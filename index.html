@@ -161,6 +161,129 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/16/田螺姑娘算法总结/" itemprop="url">
+                田螺姑娘算法总结
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-16T10:54:45+08:00" content="2015-11-16">
+            2015-11-16
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/16/田螺姑娘算法总结/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/16/田螺姑娘算法总结/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>2015&#x5E74;&#x53CC;&#x5341;&#x4E00;,&#x7B80;&#x5BFB;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#x5F00;&#x53D1;&#x4E00;&#x6B3E;&#x5C0F;&#x6E38;&#x620F; &#x201C;<a href="http://m.jianxun.io/event/03" target="_blank" rel="external">BUG&#x5927;&#x4F5C;&#x6218;</a>&#x201D;.&#x5728;&#x8FDB;&#x5165;&#x5F69;&#x86CB;&#x4E4B;&#x540E;,&#x6709;&#x4E00;&#x4E2A;&#x7530;&#x87BA;&#x59D1;&#x5A18;&#x89E3;&#x6551;&#x4F60;&#x7684;&#x9009;&#x9879;,&#x6709;&#x90E8;&#x5206;&#x670B;&#x53CB;&#x5BF9;&#x5B83;&#x7684;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x597D;&#x5947;.&#x7531;&#x6211;&#x8BF4;&#x8BF4;&#x8BE5;&#x529F;&#x80FD;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;.</p>
+<p>&#x7530;&#x87BA;&#x59D1;&#x5A18;&#x7684;&#x7B97;&#x6CD5;: <strong>&#x5BBD;&#x641C;&#x961F;&#x5217;</strong>, <strong>&#x526A;&#x679D;</strong>,<strong>redis</strong></p>
+<h1 id="&#x9884;&#x5904;&#x7406;">&#x9884;&#x5904;&#x7406;</h1><p>&#x6E38;&#x620F;&#x4E3A;&#x4E00;&#x4E2A;5x5&#x7684;&#x68CB;&#x9762;,&#x6BCF;&#x4E2A;&#x5C0F;&#x683C;&#x5B50;&#x5B58;&#x5728;2&#x79CD;&#x72B6;&#x6001;:0 &#x6216; 1.</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+</tr>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+</tr>
+<tr>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6211;&#x4EEC;&#x4E3A;&#x6BCF;&#x4E2A;&#x5C0F;&#x683C;&#x5B50;&#x7F16;&#x53F7;,&#x5E76;&#x4E14;&#x8BBE;p[i]&#x4E3A;&#x7B2C;i&#x4E2A;&#x683C;&#x5B50;&#x7684;&#x72B6;&#x6001;, pvalue = sum(p[i]* 2^i). &#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6C42;&#x7684;pvalue&#x68CB;&#x9762;&#x4E0A;&#x7684;&#x603B;&#x548C;,&#x5E76;&#x4E14;pvalue&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x90FD;&#x80FD;&#x548C;&#x552F;&#x4E00;&#x7684;&#x4E00;&#x4E2A;&#x68CB;&#x9762;&#x4E00;&#x4E00;&#x6620;&#x5C04;.</p>
+<h1 id="&#x72B6;&#x6001;&#x8F6C;&#x79FB;">&#x72B6;&#x6001;&#x8F6C;&#x79FB;</h1><p>&#x8BE5;&#x6E38;&#x620F;&#x7684;&#x641C;&#x7D22;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x7B56;&#x7565;&#x5E76;&#x4E0D;&#x590D;&#x6742;, &#x5C31;&#x662F;&#x5C06;&#x70B9;&#x51FB;&#x65B9;&#x5757;&#x548C;&#x5176;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x7684;5&#x4E2A;&#x65B9;&#x5757;&#x53D6;&#x53CD;.&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x70B9;&#x51FB;&#x4E4B;&#x540E;&#x7684;&#x72B6;&#x6001;.&#x6211;&#x4EEC;&#x4ECE;pvalue1,&#x542C;&#x8FC7;&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x5230;&#x5C40;&#x9762;&#x60C5;&#x51B5;,&#x518D;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x7684;&#x8FB9;&#x754C;&#x5224;&#x65AD;,&#x5C31;&#x80FD;&#x5F97;&#x5230;&#x70B9;&#x51FB;&#x4E4B;&#x540E;&#x7684;pvalue2.</p>
+<h1 id="&#x5BBD;&#x641C;&#x961F;&#x5217;">&#x5BBD;&#x641C;&#x961F;&#x5217;</h1><p>&#x6211;&#x4EEC;&#x4ECE;&#x7ED3;&#x675F;&#x72B6;&#x6001;&#x5F00;&#x59CB;&#x9006;&#x5411;&#x5BBD;&#x641C;,&#x8FD9;&#x6837;&#x80FD;&#x4FDD;&#x8BC1;&#x6240;&#x6709;&#x641C;&#x7D22;&#x5230;&#x7684;&#x68CB;&#x9762;&#x90FD;&#x662F;&#x6709;&#x89E3;.</p>
+<p>&#x5148;&#x5C06;&#x7ED3;&#x675F;&#x72B6;&#x6001; value_end = 0 &#x5165;&#x961F;, &#x4ECE;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x80FD;&#x6709;25&#x79CD;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x5165;&#x961F;.&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x5165;&#x961F;&#x524D;&#x5FC5;&#x987B;&#x5224;&#x65AD;&#x8BE5;&#x72B6;&#x6001;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x88AB;&#x904D;&#x5386;&#x8FC7;&#x4E86;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x5165;&#x961F;,&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x904D;&#x5386;&#x5219;&#x4E0D;&#x5C06;&#x8BE5;&#x72B6;&#x6001;&#x5165;&#x961F;,&#x8FD9;&#x6837;&#x80FD;&#x9632;&#x6B62;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x51FA;&#x73B0;&#x6B7B;&#x5FAA;&#x73AF;.</p>
+<h1 id="redis">redis</h1><p>&#x5B58;&#x50A8;&#x72B6;&#x6001;&#x8F6C;&#x79FB;,&#x6BCF;&#x6B21;&#x5728;&#x5BBD;&#x641C;&#x961F;&#x5217;&#x4E2D;,&#x65B0;&#x7684;&#x72B6;&#x6001;&#x88AB;&#x904D;&#x5386;&#x65F6;&#x6211;&#x4EEC;&#x90FD;&#x5C06;&#x4EE5;</p>
+<p>key:value             &#x961F;&#x5C3E;&#x72B6;&#x6001;&#x503C;: &#x961F;&#x9996;&#x72B6;&#x6001;&#x503C;   &#x5B58;&#x5165;redis</p>
+<p>&#x4E8E;&#x662F;&#x5728;&#x83B7;&#x53D6;&#x89E3;&#x6CD5;&#x6B65;&#x9AA4;&#x65F6;&#x6211;&#x4EEC;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x80FD;&#x964D;&#x4F4E;&#x5230;O(1)</p>
+<h1 id="&#x526A;&#x679D;">&#x526A;&#x679D;</h1><p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x68CB;&#x9762;&#x662F;&#x53EF;&#x4EE5;&#x65CB;&#x8F6C;,&#x6709;&#x4E00;&#x4E9B;&#x68CB;&#x9762;&#x72B6;&#x6001;&#x7ECF;&#x8FC7;&#x65CB;&#x8F6C;&#x4E4B;&#x540E;&#x662F;&#x5168;&#x7B49;&#x7684;,&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x5C40;&#x9762;pvalue&#x65F6;,&#x6BCF;&#x4E2A;&#x5C40;&#x9762;&#x8FDB;&#x884C;3&#x6B21;90&#x5EA6;&#x65CB;&#x8F6C;.&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x7684;pvalue&#x4F5C;&#x4E3A;&#x8BE5;&#x5C40;&#x9762;&#x7684;&#x63CF;&#x8FF0; </p>
+<p>pvalue = max(pvalue_0, pvalue_90,pvalue180,pvalue270)</p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1><p>&#x6B64;&#x6B21;&#x7530;&#x87BA;&#x59D1;&#x5A18;&#x7684;&#x7B97;&#x6CD5;,&#x6211;&#x4F7F;&#x7528;python&#x5B9E;&#x73B0;5x5&#x7684;&#x5C40;&#x9762;&#x7EA6;200w&#x72B6;&#x6001;&#x5171;&#x8D39;&#x4E8B;50&#x5206;&#x949F;&#x904D;&#x5386;&#x5B8C;&#x6210;,&#x7B97;&#x6CD5;&#x4EC5;&#x7528;&#x7C97;&#x7CD9;&#x7684;&#x526A;&#x679D;.&#x76F8;&#x4FE1;&#x5F88;&#x591A;&#x670B;&#x53CB;&#x80FD;&#x4F1A;&#x505A;&#x7684;&#x6BD4;&#x6211;&#x66F4;&#x52A0;&#x7B80;&#x6D01;,&#x800C;&#x4E14;&#x53C8;&#x66F4;&#x52A0;&#x4F18;&#x7F8E;.</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/18/vim-airline/" itemprop="url">
                 Vim Airline
               </a>
@@ -407,7 +530,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
