@@ -1,8 +1,6 @@
 title: vim airline
-
 date: 2015-10-18 01:33:38
-
-## tags:vim powerline airline
+tags: vim powerline airline
 ---
 前段时间的airline的特殊字符显示不出来 今天终于倒腾修复了
 

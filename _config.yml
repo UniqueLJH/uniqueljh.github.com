@@ -17,6 +17,7 @@ url: http://yoursite.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+avatar: /images/avatar.jpg
 
 # Directory
 source_dir: source
@@ -27,6 +28,11 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
+# Social links
+social:
+  github: https://github.com/UniqueLJH
+  zhihu: https://www.zhihu.com/people/LiMoYe/
 
 # Writing
 new_post_name: :title.md # File name of new posts
