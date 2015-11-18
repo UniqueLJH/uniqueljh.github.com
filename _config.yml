@@ -7,7 +7,7 @@ title: 李嘉航Blog
 subtitle:
 description:
 author: 
-language:
+language: zh-Hans
 timezone:
 duoshuo_shortname: lijiahang
 
@@ -61,11 +61,13 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+toc:
+  maxDepth: 3
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
-
+#theme: landscape
+theme: next
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:

@@ -11,7 +11,7 @@ date: 2015-10-13 23:52:37
 首先找到vim的安装路径,而非修改当前用户下.vimrc
 
 在vim中
-
+<!-- 修改.vimrc -->
 ```{bash}
 :echo $VIMRUNTIME
 ```
@@ -34,6 +34,7 @@ syn keyword MyConditional       logging
 这里为logging加入新的条件后
 编辑配色文件 例如博主使用的molokai配色 则直接修改molokai.vim
 该文件通常位于
+<!-- 修改molokai配色方案>
 ```
 ~/.vim/colors/molokai.vim
 ```
