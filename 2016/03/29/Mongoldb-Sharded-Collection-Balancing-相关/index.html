@@ -37,16 +37,20 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Welcome to my blog">
+<meta name="description" content="title: Mongodb Sharded Collection Balancing &amp;#x76F8;&amp;#x5173;date: 2016-03-29 20:10:32
+tags: mongodb Sharded Collection balancing&amp;#x4ECA;&amp;#x5929;&amp;#x5728;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#x4E0A;&amp;#x4F7F;&amp;#x7528;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/10/13/hello-world/index.html">
+<meta property="og:title" content="Mongoldb Sharded Collection Balancing 相关">
+<meta property="og:url" content="http://yoursite.com/2016/03/29/Mongoldb-Sharded-Collection-Balancing-相关/index.html">
 <meta property="og:site_name" content="李嘉航Blog">
-<meta property="og:description" content="Welcome to my blog">
-<meta property="og:updated_time" content="2015-10-13T11:55:32.000Z">
+<meta property="og:description" content="title: Mongodb Sharded Collection Balancing &amp;#x76F8;&amp;#x5173;date: 2016-03-29 20:10:32
+tags: mongodb Sharded Collection balancing&amp;#x4ECA;&amp;#x5929;&amp;#x5728;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#x4E0A;&amp;#x4F7F;&amp;#x7528;">
+<meta property="og:image" content="http://yoursite.com/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-29%20%E4%B8%8B%E5%8D%889.09.19.png">
+<meta property="og:updated_time" content="2016-03-29T13:45:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to my blog">
+<meta name="twitter:title" content="Mongoldb Sharded Collection Balancing 相关">
+<meta name="twitter:description" content="title: Mongodb Sharded Collection Balancing &amp;#x76F8;&amp;#x5173;date: 2016-03-29 20:10:32
+tags: mongodb Sharded Collection balancing&amp;#x4ECA;&amp;#x5929;&amp;#x5728;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#x4E0A;&amp;#x4F7F;&amp;#x7528;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +62,7 @@
 
 
 
-  <title> Hello World | 李嘉航Blog </title>
+  <title> Mongoldb Sharded Collection Balancing 相关 | 李嘉航Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -160,7 +164,7 @@
           
           
             
-              Hello World
+              Mongoldb Sharded Collection Balancing 相关
             
           
         </h1>
@@ -169,8 +173,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-13T19:55:32+08:00" content="2015-10-13">
-            2015-10-13
+          <time itemprop="dateCreated" datetime="2016-03-29T20:10:00+08:00" content="2016-03-29">
+            2016-03-29
           </time>
         </span>
 
@@ -180,8 +184,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/13/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/13/hello-world/" itemprop="commentsCount"></span>
+              <a href="/2016/03/29/Mongoldb-Sharded-Collection-Balancing-相关/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/Mongoldb-Sharded-Collection-Balancing-相关/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -196,7 +200,40 @@
       
 
       
-        <span itemprop="articleBody"><p>Welcome to my blog</p>
+        <span itemprop="articleBody"><p>title: Mongodb Sharded Collection Balancing &#x76F8;&#x5173;<br>date: 2016-03-29 20:10:32</p>
+<h2 id="tags-mongodb-sharded-collection-balancing">tags: mongodb Sharded Collection balancing</h2><p>&#x4ECA;&#x5929;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x4F7F;&#x7528;mongo&#x5206;&#x7247;&#x96C6;&#x7FA4;&#x5904;&#x7406;&#x6570;&#x636E;&#x65F6;,&#x53D1;&#x73B0;&#x6570;&#x636E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7684;shard&#x4E0A;&#x9762;&#x5206;&#x5E03;&#x4E0D;&#x5747;.<br>&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;:<br>    mongodb&#x7248;&#x672C;3.2<br>    &#x5728;shard&#x6709;3&#x4E2A;,&#x5206;&#x522B;&#x90E8;&#x7F72;&#x5728;3&#x4E2A;&#x8282;&#x70B9;.</p>
+<p>&#x8FDB;&#x5165;mongo, &#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x72B6;&#x6001;&#x5982;&#x4E0B;&#x56FE;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">use</span> <span class="keyword">admin</span></span><br><span class="line">sh.<span class="keyword">status</span>()</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-29%20%E4%B8%8B%E5%8D%889.09.19.png" alt="enter description here" title="&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2016-03-29 &#x4E0B;&#x5348;9.09.19.png"></p>
+<p>&#x4ED4;&#x7EC6;&#x770B;&#x4E86;&#x4E00;&#x4E0B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x5BF9;&#x4E8E;sharded cluster, &#x4E0E;cluster balancer&#x7684;&#x4E00;&#x4E9B;&#x7EC6;&#x8282;</p>
+<p>mongodb&#x9ED8;&#x8BA4;&#x4F1A;&#x81EA;&#x52A8;&#x5E73;&#x8861;&#x5404;&#x4E2A;shard, &#x901A;&#x8FC7;&#x6570;&#x636E;&#x5757;&#x8FC1;&#x79FB;(Chunk Migration)&#x4F7F;&#x5F97;shard&#x4FDD;&#x6301;&#x5747;&#x8861;.&#x89E6;&#x53D1;&#x6761;&#x4EF6;&#x5C31;&#x662F;&#x5F53;&#x4E00;&#x4E2A;shard&#x4F1A;&#x6BD4;&#x5176;&#x4ED6;shard&#x7684;chunk&#x6570;&#x91CF;&#x591A;&#x5F88;&#x591A;&#x65F6;&#x5C31;&#x4F1A;&#x5C06;&#x81EA;&#x5DF1;&#x7684;chunk&#x5411;&#x5176;&#x4ED6;&#x8FC1;&#x79FB;.<br>&#x5177;&#x4F53;&#x7684;&#x8FC1;&#x79FB;&#x5B89;&#x5168;&#x7EBF;(Migration Thresholds)</p>
+<table>
+<thead>
+<tr>
+<th>Number of Chunks</th>
+<th>Migration Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fewer than 20</td>
+<td>2</td>
+</tr>
+<tr>
+<td>20-79</td>
+<td>4</td>
+</tr>
+<tr>
+<td>80 and greater</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>&#x7136;&#x540E;&#x5BF9;&#x4E8E;blancer&#x529F;&#x80FD;&#x7684;&#x4E00;&#x4E9B;&#x7BA1;&#x7406;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">use</span> <span class="tag">config</span></span><br><span class="line"><span class="tag">db</span><span class="class">.locks</span><span class="class">.find</span>( <span class="rules">{ <span class="rule"><span class="attribute">_id </span>:<span class="value"> <span class="string">&quot;balancer&quot;</span> } ).<span class="function">pretty</span>()</span><br><span class="line">#&#x67E5;&#x770B;&#x9501;&#x72B6;&#x6001;, balancer&#x5728;&#x8FDB;&#x884C;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5411;mongo.config.locks&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x9501;&#x72B6;&#x6001;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">{   <span class="string">&quot;_id&quot;</span> : <span class="string">&quot;balancer&quot;</span>,</span><br><span class="line"><span class="string">&quot;process&quot;</span> : <span class="string">&quot;mongos0.example.net:1292810611:1804289383&quot;</span>,</span><br><span class="line">  <span class="string">&quot;state&quot;</span> : <span class="number">2</span>,</span><br><span class="line">     <span class="string">&quot;ts&quot;</span> : <span class="function">ObjectId</span>(<span class="string">&quot;4d0f872630c42d1978be8a2e&quot;</span>),</span><br><span class="line">   <span class="string">&quot;when&quot;</span> : <span class="string">&quot;Mon Dec 20 2010 11:41:10 GMT-0500 (EST)&quot;</span>,</span><br><span class="line">    <span class="string">&quot;who&quot;</span> : <span class="string">&quot;mongos0.example.net:1292810611:1804289383:Balancer:846930886&quot;</span>,</span><br><span class="line">    <span class="string">&quot;why&quot;</span> : <span class="string">&quot;doing balance round&quot;</span> }</span></span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x521B;&#x5EFA;&#x5B9A;&#x65F6;balancer&#x4EFB;&#x52A1;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.settings.update(</span><br><span class="line">   { _id: <span class="string">&quot;balancer&quot;</span> },</span><br><span class="line">   { $<span class="built_in">set</span>: { activeWindow : { start : <span class="string">&quot;&lt;start-time&gt;&quot;</span>, stop : <span class="string">&quot;&lt;stop-time&gt;&quot;</span> } } },</span><br><span class="line">   { upsert: <span class="literal">true</span> }</span><br><span class="line">)</span><br><span class="line"><span class="preprocessor"># HH:MM</span></span><br><span class="line"><span class="preprocessor"># HH  <span class="number">00</span>-<span class="number">23</span></span></span><br><span class="line"><span class="preprocessor"># MM  <span class="number">00</span>-<span class="number">59</span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x5220;&#x9664;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.settings.<span class="keyword">update</span>(</span><br><span class="line">   { _id: <span class="string">&quot;balancer&quot;</span> },</span><br><span class="line">   { <span class="variable">$set</span>: { activeWindow : { start : <span class="string">&quot;&lt;start-time&gt;&quot;</span>, stop : <span class="string">&quot;&lt;stop-time&gt;&quot;</span> } } },</span><br><span class="line">   { upsert: true }</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>&#x5173;&#x95ED;balancer<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.settings.<span class="keyword">update</span>(</span><br><span class="line">   { _id: <span class="string">&quot;balancer&quot;</span> },</span><br><span class="line">   { <span class="variable">$set</span>: { activeWindow : { start : <span class="string">&quot;&lt;start-time&gt;&quot;</span>, stop : <span class="string">&quot;&lt;stop-time&gt;&quot;</span> } } },</span><br><span class="line">   { upsert: true }</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>&#x6253;&#x5F00;balancer<br><code>`
+db.settings.update( { _id: &quot;balancer&quot; }, { $set : { stopped: false } } , { upsert: true } )</code></p>
 </span>
       
     </div>
@@ -208,11 +245,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/13/vim-如何自定义语法高亮/" rel="prev">Vim 如何自定义语法高亮</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/13/Mesos-Spark集群部署/" rel="next">Mesos-Spark集群部署</a>
             
           </div>
         </div>
@@ -237,8 +274,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/13/hello-world/"
-                   data-title="Hello World" data-url="http://yoursite.com/2015/10/13/hello-world/">
+              <div class="ds-thread" data-thread-key="2016/03/29/Mongoldb-Sharded-Collection-Balancing-相关/"
+                   data-title="Mongoldb Sharded Collection Balancing 相关" data-url="http://yoursite.com/2016/03/29/Mongoldb-Sharded-Collection-Balancing-相关/">
               </div>
             
           </div>
@@ -330,7 +367,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-mongodb-sharded-collection-balancing"><span class="nav-number">1.</span> <span class="nav-text">tags: mongodb Sharded Collection balancing</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
